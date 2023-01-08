@@ -1,5 +1,4 @@
 #include <iostream>
-#include <array>
 
 int andGate(int A, int B) {
 
@@ -52,16 +51,33 @@ void adder(int A, int B, int C, int output[2]){
 
 }
 
+void fourBitAdder(int firstFourBitsInput[4], int secondFourBitsInput[4], int carry){
+
+    int output[5];
+
+    int aux[2];
+
+    adder(firstFourBitsInput[3], secondFourBitsInput[3], carry, aux);
+    output[3] = aux[0];
+    adder(firstFourBitsInput[2],secondFourBitsInput[2],aux[1],aux);
+    output[2] = aux[0];
+    adder(firstFourBitsInput[1],secondFourBitsInput[1],aux[1],aux);
+    output[1] = aux[0];
+    adder(firstFourBitsInput[0],secondFourBitsInput[0],aux[1],aux);
+    output[0] = aux[0];
+
+    output[4] = aux[1];
+
+    printf("The sum is %d %d %d %d , and the carry is %d", output[0], output[1], output[2], output[3], output[4]);
+
+}
 
 int main() {
 
-    int output[2];
+    int firstFourBitsInput[4] = {0,0,1,1};
+    int secondFourBitsInput[4] = {0,0,0,1};
 
-    adder(1,1,1,output);
-
-    printf("Sum : %d\n", output[0]);
-
-    printf("Carry : %d\n", output[1]);
+    fourBitAdder(firstFourBitsInput,secondFourBitsInput,0);
 
     return 0;
 
