@@ -1,4 +1,5 @@
-#include <iostream>
+#include "logical_ports.h"
+#include <cstdio>
 
 int notGate(int A) {
 
@@ -113,15 +114,15 @@ void ArithmeticLogicUnit(int firstFourBitsInput[4], int secondFourBitsInput[4], 
 
 }
 
-int main() {
+// int main() {
 
-    int firstFourBitsInput[4] = {1,1,1,0};
-    int secondFourBitsInput[4] = {1,1,0,0};
+//     int firstFourBitsInput[4] = {1,1,1,0};
+//     int secondFourBitsInput[4] = {1,1,0,0};
 
-    ArithmeticLogicUnit(firstFourBitsInput,secondFourBitsInput, 0);
+//     ArithmeticLogicUnit(firstFourBitsInput,secondFourBitsInput, 0);
 
-    printf("NOR IS %d\n",norGate(0,0));
+//     printf("NOR IS %d\n",norGate(0,0));
 
-    return 0;
+//     return 0;
 
-}
+// }

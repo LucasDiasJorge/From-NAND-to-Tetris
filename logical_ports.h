@@ -1,6 +1,10 @@
 #ifndef LOGICAL_PORTS_H
 #define LOGICAL_PORTS_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 int notGate(int A);
 
 int andGate(int A, int B);
@@ -18,5 +22,9 @@ void adder(int A, int B, int C, int output[2]);
 void fourBitAdder(int firstFourBitsInput[4], int secondFourBitsInput[4], int carry, int output[5]);
 
 void ArithmeticLogicUnit(int firstFourBitsInput[4], int secondFourBitsInput[4], int operation);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
